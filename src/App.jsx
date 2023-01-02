@@ -2,13 +2,15 @@ import { useFetch } from "./components/MiApi";
 import { useState } from "react";
 import Search from "./components/Search";
 import SortFilter from "./components/SortFilter";
+import Header from "./components/Header";
 const App = () => {
 
     const [filteredList, setFilteredList] = useState([]);
 
-    const imgUrl = "https://image.tmdb.org/t/p/w500";
+    const imgUrl = "https://image.tmdb.org/t/p/original";
+    const cardImgUrl = "https://image.tmdb.org/t/p/w500"
 
-    const { data, loading, error } = useFetch();
+    const { data, loading, error, randomData } = useFetch();
 
     if (loading) {
         return <p>Loading data...</p>;
@@ -21,8 +23,10 @@ const App = () => {
 
     return (
         <>
-            <h1>Notflix</h1>
-            
+            {/* <h1>Notflix</h1> */}
+
+            <Header randomData={randomData} imgUrl={imgUrl}/>
+
             <Search setFilteredList={setFilteredList} data={data} />
             <SortFilter
                 filteredList={filteredList}
@@ -34,7 +38,7 @@ const App = () => {
                     <li key={item.name}>
                         <p>{item.name}</p>
                         <p>{item.vote_average}</p>
-                        <img src={imgUrl + item.poster_path} width="200px" />
+                        <img src={cardImgUrl + item.poster_path} width="200px" />
                     </li>
                 ))}
             </ul>
