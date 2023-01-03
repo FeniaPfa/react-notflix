@@ -1,8 +1,37 @@
 *{
   margin: 0;
   box-sizing: border-box;
+  /* color: #ffff; */
 }
 
 body{
-  background: #000;
+  background: #141414;
+}
+
+.absoluteContainer{
+  height: 100%;
+}
+
+.absoluteContainer::before{
+  content: "";
+  height: 50%;
+  background: linear-gradient(180deg, rgba(0,13,33,1) 0%, rgba(0,13,33,0) 76%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.absoluteContainer::after{
+  content: "";
+  height: 50%;
+  background: linear-gradient(0deg, rgba(0, 13, 33, 0.805) 0%, rgba(0,13,33,0) 76%);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.hero-text > *{
+  text-shadow: 4px 2px 6px rgba(0, 0, 0, 0.92);
+  color: #fff;
 }

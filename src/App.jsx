@@ -3,6 +3,7 @@ import { useState } from "react";
 import Search from "./components/Search";
 import SortFilter from "./components/SortFilter";
 import Header from "./components/Header";
+import { Stack } from "@mui/material";
 const App = () => {
 
     const [filteredList, setFilteredList] = useState([]);
@@ -23,15 +24,22 @@ const App = () => {
 
     return (
         <>
-            {/* <h1>Notflix</h1> */}
 
             <Header randomData={randomData} imgUrl={imgUrl}/>
+
+            <Stack direction="row" spacing={6} sx={{
+                justifyContent: "center",
+                margin: "2rem auto"
+            }}>
 
             <Search setFilteredList={setFilteredList} data={data} />
             <SortFilter
                 filteredList={filteredList}
                 setFilteredList={setFilteredList}
             />
+
+            </Stack>
+
 
             <ul style={{ display: "flex", flexWrap: "wrap" }}>
                 {filteredList.map((item) => (
