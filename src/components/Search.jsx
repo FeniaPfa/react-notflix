@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { OutlinedInput, InputAdornment } from "@mui/material";
+import { OutlinedInput, InputAdornment, FormControl } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 const Search = ({ setFilteredList, data }) => {
@@ -17,22 +17,16 @@ const Search = ({ setFilteredList, data }) => {
     }, []);
 
     return (
-        <form>
-            {/* <input
-                onChange={handleSearch}
-                type="text"
-                placeholder="Buscar"
-            /> */}
+        <FormControl sx={{width:"30rem"}}>
             <OutlinedInput
                 onChange={handleSearch}
                 placeholder="Busca una serie..."
                 color="error"
                 sx={{
-                  width:"30rem",
                     backgroundColor: "#FFFFFF59",
                     borderRadius: "5px",
                     fontSize: "1.2rem",
-                    color: "#fff",
+                    color: "#fff"
                 }}
                 startAdornment={
                     <InputAdornment position="start">
@@ -40,7 +34,10 @@ const Search = ({ setFilteredList, data }) => {
                     </InputAdornment>
                 }
             />
-        </form>
+        </FormControl>
+
+
+
     );
 };
 

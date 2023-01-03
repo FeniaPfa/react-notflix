@@ -25,23 +25,7 @@ const SortFilter = ({ filteredList, setFilteredList }) => {
 
     return (
         <>
-            {/* <select
-                name="select-order"
-                id="order"
-                onChange={(e) => handleSort(e.target.value)}
-                defaultValue=""
-            >
-                <option value="" disabled hidden>
-                    Seleccione orden
-                </option>
-                <option value="title">A - Z</option>
-                <option value="titleReverse">Z - A</option>
-                <option value="best">Mejor puntuación</option>
-                <option value="worst">Peor puntuación</option>
-            </select> */}
-            {/* <InputLabel id="demo-simple-select-label">Selecciona Orden</InputLabel> */}
-            <FormControl sx={{ minWidth: "16rem" }}>
-                {/* <InputLabel id="Select order">Selecciona orden</InputLabel> */}
+            <FormControl sx={{width:"16rem"}}>
                 <Select
                     color="error"
                     labelId="Select order"

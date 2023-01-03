@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export const useFetch = () => {
     const [data, setData] = useState([]);
-    const [randomData , setRandomData] = useState({})
+    const [headerData , setHeaderData] = useState({})
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -29,7 +29,7 @@ export const useFetch = () => {
             // get Random
             const n = Math.floor(Math.random() * db.results.length)
             const random = db.results[n]
-            setRandomData(random)
+            setHeaderData(random)
         } catch (error) {
             console.log(error);
             setError(error);
@@ -42,5 +42,5 @@ export const useFetch = () => {
         getData();
     }, []);
 
-    return { data, loading, error, randomData };
+    return { data, loading, error, headerData, setHeaderData };
 };

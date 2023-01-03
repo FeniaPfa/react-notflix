@@ -1,6 +1,7 @@
-import { Container, Stack, Typography } from "@mui/material";
+import { Container, Stack, Typography, Button } from "@mui/material";
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
-const Header = ({ imgUrl, randomData }) => {
+const Header = ({ imgUrl, headerData }) => {
     return (
         <Container
             maxWidth="false"
@@ -28,7 +29,7 @@ const Header = ({ imgUrl, randomData }) => {
                     Notflix
                 </Typography>
                 <Stack
-                    className="hero-text"
+                    
                     direction="column"
                     spacing={2}
                     sx={{
@@ -38,16 +39,17 @@ const Header = ({ imgUrl, randomData }) => {
                         width: {xs:"90%",md: "50%"},
                     }}
                 >
-                    <Typography variant="h3" sx={{ fontWeight: "700" }}>
-                        {randomData.name}
+                    <Typography className="hero-text" variant="h3" sx={{ fontWeight: "700" }}>
+                        {headerData.name}
                     </Typography>
-                    <Typography variant="body1" sx={{fontSize:"1.1rem"}}>
-                        {randomData.overview}
+                    <Typography className="hero-text" variant="body1" sx={{fontSize:"1.1rem", display:{xs:"none", md:"inherit"}} }>
+                        {headerData.overview}
                     </Typography>
+                    <Button variant="contained" sx={{background:"#F00", width:"200px",zIndex:"2"}}><PlayArrowIcon /> Reproducir</Button>
                 </Stack>
             </div>
             <img
-                src={imgUrl + randomData?.backdrop_path}
+                src={imgUrl + headerData?.backdrop_path}
                 alt="random"
                 style={{ width: "100%", objectFit: "cover" }}
             />

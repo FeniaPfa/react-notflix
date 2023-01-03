@@ -31,7 +31,11 @@ body{
 
 }
 
-.hero-text > *{
+.hero-text{
   text-shadow: 4px 2px 6px rgba(0, 0, 0, 0.92);
   color: #fff;
+}
+
+.card-img{
+  object-fit: cover;
 }
