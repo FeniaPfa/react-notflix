@@ -13,11 +13,11 @@ const SortFilter = ({ filteredList, setFilteredList }) => {
             setFilteredList(sortedList);
         }
         if (type === "best") {
-            sortedList.sort((a, b) => b.vote_average - a.vote_average);
+            sortedList.sort((a, b) => b.popularity - a.popularity);
             setFilteredList(sortedList);
         }
         if (type === "worst") {
-            sortedList.sort((a, b) => a.vote_average - b.vote_average);
+            sortedList.sort((a, b) => a.popularity - b.popularity);
             setFilteredList(sortedList);
         }
         // console.log(filteredList);
@@ -25,14 +25,13 @@ const SortFilter = ({ filteredList, setFilteredList }) => {
 
     return (
         <>
-            <FormControl sx={{width:"16rem"}}>
+            <FormControl sx={{ width: "16rem" }}>
                 <Select
                     color="error"
                     labelId="Select order"
-                    // label="Selecciona Orden"
                     value={"x"}
                     onChange={(e) => handleSort(e.target.value)}
-                    inputProps={{ 'aria-label': 'Seleccionar Orden' }}
+                    inputProps={{ "aria-label": "Seleccionar Orden" }}
                     sx={{
                         backgroundColor: "#FFFFFF59",
                         borderRadius: "5px",
@@ -45,8 +44,8 @@ const SortFilter = ({ filteredList, setFilteredList }) => {
                     </MenuItem>
                     <MenuItem value={"title"}>A - Z</MenuItem>
                     <MenuItem value={"titleReverse"}>Z - A</MenuItem>
-                    <MenuItem value={"best"}>Mejor puntuación</MenuItem>
-                    <MenuItem value={"worst"}>Peor puntuación</MenuItem>
+                    <MenuItem value={"best"}>Mas popular</MenuItem>
+                    <MenuItem value={"worst"}>Menos popular</MenuItem>
                 </Select>
             </FormControl>
         </>

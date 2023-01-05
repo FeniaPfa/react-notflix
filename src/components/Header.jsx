@@ -1,5 +1,5 @@
 import { Container, Stack, Typography, Button } from "@mui/material";
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const Header = ({ imgUrl, headerData }) => {
     return (
@@ -9,7 +9,7 @@ const Header = ({ imgUrl, headerData }) => {
             sx={{
                 margin: "0 auto",
                 width: "100%",
-                maxHeight: {xs:"100vh",md: "70vh"},
+                maxHeight: { xs: "100vh", md: "70vh" },
                 position: "relative",
                 overflow: "hidden",
             }}
@@ -29,27 +29,42 @@ const Header = ({ imgUrl, headerData }) => {
                     Notflix
                 </Typography>
                 <Stack
-                    
                     direction="column"
                     spacing={2}
                     sx={{
                         position: "absolute",
                         top: "30%",
                         padding: "1rem 2rem",
-                        width: {xs:"90%",md: "50%"},
+                        width: { xs: "90%", md: "50%" },
                     }}
                 >
-                    <Typography className="hero-text" variant="h3" sx={{ fontWeight: "700" }}>
+                    <Typography
+                        className="hero-text"
+                        variant="h3"
+                        sx={{ fontWeight: "700" }}
+                    >
                         {headerData.name}
                     </Typography>
-                    <Typography className="hero-text" variant="body1" sx={{fontSize:"1.1rem", display:{xs:"none", md:"inherit"}} }>
+                    <Typography
+                        className="hero-text"
+                        variant="body1"
+                        sx={{
+                            fontSize: "1.1rem",
+                            display: { xs: "none", md: "inherit" },
+                        }}
+                    >
                         {headerData.overview}
                     </Typography>
-                    <Button variant="contained" sx={{background:"#F00", width:"200px",zIndex:"2"}}><PlayArrowIcon /> Reproducir</Button>
+                    <Button
+                        variant="contained"
+                        sx={{ background: "#F00", width: "200px", zIndex: "2" }}
+                    >
+                        <PlayArrowIcon /> Reproducir
+                    </Button>
                 </Stack>
             </div>
             <img
-                src={imgUrl + headerData?.backdrop_path}
+                src={imgUrl + headerData.backdrop_path}
                 alt="random"
                 style={{ width: "100%", objectFit: "cover" }}
             />

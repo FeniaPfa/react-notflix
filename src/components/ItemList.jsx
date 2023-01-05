@@ -8,9 +8,9 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const ItemList = ({ filteredList, cardImgUrl,setHeaderData }) => {
+const ItemList = ({ filteredList, cardImgUrl, setHeaderData }) => {
     return (
-        <Container maxWidth="false" sx={{ minHeight: "60vh"}}>
+        <Container maxWidth="false" sx={{ minHeight: "60vh" }}>
             <Stack
                 direction="row"
                 justifyContent="center"
@@ -21,8 +21,12 @@ const ItemList = ({ filteredList, cardImgUrl,setHeaderData }) => {
                     <Card
                         key={item.name}
                         onClick={() => setHeaderData(item)}
-                        sx={{ width: "300px", height: "450px", borderRadius:"12px", cursor:"pointer",
-                        ":hover": {border:"solid 2px #F00"}
+                        sx={{
+                            width: "300px",
+                            height: "450px",
+                            borderRadius: "12px",
+                            cursor: "pointer",
+                            ":hover": { border: "solid 2px #F00" },
                         }}
                         raised={true}
                     >
@@ -39,7 +43,6 @@ const ItemList = ({ filteredList, cardImgUrl,setHeaderData }) => {
                     </Card>
                 ))}
             </Stack>
-
         </Container>
     );
 };

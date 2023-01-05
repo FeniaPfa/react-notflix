@@ -17,7 +17,7 @@ const Search = ({ setFilteredList, data }) => {
     }, []);
 
     return (
-        <FormControl sx={{width:"30rem"}}>
+        <FormControl sx={{ width: "30rem" }}>
             <OutlinedInput
                 onChange={handleSearch}
                 placeholder="Busca una serie..."
@@ -26,7 +26,7 @@ const Search = ({ setFilteredList, data }) => {
                     backgroundColor: "#FFFFFF59",
                     borderRadius: "5px",
                     fontSize: "1.2rem",
-                    color: "#fff"
+                    color: "#fff",
                 }}
                 startAdornment={
                     <InputAdornment position="start">
@@ -35,9 +35,6 @@ const Search = ({ setFilteredList, data }) => {
                 }
             />
         </FormControl>
-
-
-
     );
 };
 
