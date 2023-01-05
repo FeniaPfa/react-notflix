@@ -29,6 +29,7 @@ export const useFetch = () => {
             const n = Math.floor(Math.random() * db.results.length);
             const random = db.results[n];
             setHeaderData(random);
+            
         } catch (error) {
             console.log(error);
             setError(error);
