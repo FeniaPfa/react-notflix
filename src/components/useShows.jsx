@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { API_URL } from "../constants/api";
 
-export const useFetch = () => {
+export const useShows = () => {
     const [data, setData] = useState([]);
     const [headerData, setHeaderData] = useState({});
     const [loading, setLoading] = useState(true);
@@ -10,9 +11,7 @@ export const useFetch = () => {
         setLoading(true);
 
         try {
-            const res = await fetch(
-                "https://api.themoviedb.org/3/trending/tv/week?api_key=1cf50e6248dc270629e802686245c2c8"
-            );
+            const res = await fetch(API_URL);
 
             if (!res.ok) {
                 throw {

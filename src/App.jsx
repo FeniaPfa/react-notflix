@@ -1,20 +1,15 @@
-import { useFetch } from "./components/MiApi";
+import { useShows } from "./components/useShows";
 import { useState } from "react";
-import Search from "./components/Search";
-import SortFilter from "./components/SortFilter";
-import Header from "./components/Header";
 import { Stack } from "@mui/material";
-import ItemList from "./components/ItemList";
+import { ItemList, Search, SortFilter, Loading, Header } from "./components";
+
 const App = () => {
     const [filteredList, setFilteredList] = useState([]);
 
-    const imgUrl = "https://image.tmdb.org/t/p/original";
-    const cardImgUrl = "https://image.tmdb.org/t/p/w500";
-
-    const { data, loading, error, headerData, setHeaderData } = useFetch();
+    const { data, loading, error, headerData, setHeaderData } = useShows();
 
     if (loading) {
-        return <p className="loading">Loading data...</p>;
+        return <Loading />;
     }
     if (error) {
         return (
@@ -26,7 +21,7 @@ const App = () => {
 
     return (
         <>
-            <Header headerData={headerData} imgUrl={imgUrl} />
+            <Header headerData={headerData} />
 
             <Stack
                 direction="row"
@@ -46,7 +41,6 @@ const App = () => {
 
             <ItemList
                 filteredList={filteredList}
-                cardImgUrl={cardImgUrl}
                 setHeaderData={setHeaderData}
             />
         </>
